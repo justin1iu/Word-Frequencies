@@ -1,4 +1,5 @@
 import urllib.request, urllib.error, urllib.parse, json, obo
+from collections import Counter
 
 # Notice that instead of requesting the HTML directly, we're now
 # making a request to the backend API — meaning a server that returns
@@ -31,4 +32,5 @@ wordlist = obo.stripNonAlphaNum(text)
 dictionary = obo.wordListToFreqDict(wordlist)
 sorteddict = obo.sortFreqDict(dictionary)
 
-for s in sorteddict: print(str(s))
+#for s in sorteddict: print(str(s))
+print(Counter(sorteddict))
